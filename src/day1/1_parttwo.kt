@@ -1,4 +1,4 @@
-package `1`
+package day1
 
 import kotlin.math.floor
 
