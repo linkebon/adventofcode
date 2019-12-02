@@ -106,18 +106,16 @@ val input = listOf(
 )
 
 fun main() {
-    fun calculateFuel(fuel: Int): Int {
-        fun calculate(fuel: Int): Int {
-            return floor(fuel.toFloat().div(3)).minus(2).toInt()
-        }
+    fun calculateFuel(fuel: Int, first: Boolean): Int {
+        if (fuel < 0) return 0
 
-        if (fuel <= 0) return 0
-        else if (calculate(fuel) <= 0) return fuel
+        val fuelNeeded = floor(fuel.toFloat().div(3)).minus(2).toInt()
+        if (fuelNeeded < 0) return fuel
 
-        return fuel + calculateFuel(calculate(fuel))
+        return (if (first) 0 else fuel) + calculateFuel(fuelNeeded, false)
     }
 
-    val fuelNeeded = input.map { originalMass -> calculateFuel(originalMass) - originalMass }.sum()
+    val fuelNeeded = input.map { originalMass -> calculateFuel(originalMass, true) }.sum()
     println(fuelNeeded)
 }
 
