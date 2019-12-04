@@ -2,6 +2,9 @@ package day1
 
 import kotlin.math.floor
 
+/*
+https://adventofcode.com/2019/day/1
+ */
 val input = listOf(
     103910,
     133712,

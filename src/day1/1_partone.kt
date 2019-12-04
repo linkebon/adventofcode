@@ -2,6 +2,9 @@ package day1
 
 import kotlin.math.floor
 
+/*
+https://adventofcode.com/2019/day/1
+ */
 fun main() {
     val masses = listOf(
         103910,
