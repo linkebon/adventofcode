@@ -4,21 +4,17 @@ import java.io.File
 import kotlin.math.abs
 
 /*
+What is the Manhattan distance from the central port to the closest intersection?
 https://adventofcode.com/2019/day/3
  */
-
-/*
-o (2,2)
-x (5,5)
-|5 - 2| + |5 - 2| = |3| + |3| = 6
- */
-fun main() {
-    println("Closest distance: ${findClosestDistance(calculateWiresAllTraversedCoordinates(wireA), calculateWiresAllTraversedCoordinates(wireB))}")
-}
 
 val centralPort = Pair(2, 2)
 val wireA = File("src/day3_partA/input_wireA.txt").readText().split(",")
 val wireB = File("src/day3_partA/input_wireB.txt").readText().split(",")
+
+fun main() {
+    println("Closest distance: ${findClosestDistance(calculateWiresAllTraversedCoordinates(wireA), calculateWiresAllTraversedCoordinates(wireB))}")
+}
 
 fun findClosestDistance(coordinatesWireA: List<Pair<Int, Int>>, coordinatesWireB: List<Pair<Int, Int>>): Int? {
     return coordinatesWireA.intersect(coordinatesWireB)
